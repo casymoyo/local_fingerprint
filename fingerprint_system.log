@@ -1,0 +1,2047 @@
+2025-05-10 09:55:34.362 | INFO     | __main__:handle_message:666 - Serial connection error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-05-10 09:55:39.545 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:39.549 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:44.729 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:44.736 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:49.729 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:49.738 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:54.731 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:54.736 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:59.729 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:55:59.734 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:04.734 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:04.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:09.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:09.739 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:14.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:14.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:19.734 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:19.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:24.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:24.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:29.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:29.739 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:34.729 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:34.733 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:39.729 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:39.736 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:44.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:44.736 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:49.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:49.742 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:54.734 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:54.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:59.734 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:56:59.739 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:04.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:04.737 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:09.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:09.742 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:14.734 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:14.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:19.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:19.738 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:24.729 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:24.737 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:29.731 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:29.738 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:34.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:34.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:39.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:39.739 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:44.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:44.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:49.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:49.742 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:54.734 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:54.739 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:59.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:57:59.739 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:04.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:04.740 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:09.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:09.742 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:14.733 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:14.737 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:19.729 | ERROR    | __main__:get_all_fingerprints:230 - Error fetching fingerprints
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 609, in refresh_data
+    self.refresh_fingerprints()
+    │    └ <function MainWindow.refresh_fingerprints at 0x76caa3b5c360>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 615, in refresh_fingerprints
+    fingerprints = self.db_manager.get_all_fingerprints()
+                   │    │          └ <function DatabaseManager.get_all_fingerprints at 0x76caa3a9fa60>
+                   │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+                   └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 224, in get_all_fingerprints
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
+2025-05-10 09:58:19.735 | ERROR    | __main__:get_recent_logs:247 - Error fetching access logs
+Traceback (most recent call last):
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 853, in <module>
+    main()
+    └ <function main at 0x76caa5fbaf20>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 849, in main
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x76caa513e8d0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 610, in refresh_data
+    self.refresh_logs()
+    │    └ <function MainWindow.refresh_logs at 0x76caa3b5c400>
+    └ <__main__.MainWindow object at 0x76caa513e960>
+
+  File "/home/casy/Desktop/finger_print_sensor/main.py", line 626, in refresh_logs
+    logs = self.db_manager.get_recent_logs()
+           │    │          └ <function DatabaseManager.get_recent_logs at 0x76caa3a9fb00>
+           │    └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+           └ <__main__.MainWindow object at 0x76caa513e960>
+
+> File "/home/casy/Desktop/finger_print_sensor/main.py", line 235, in get_recent_logs
+    cursor = self.db.cursor(dictionary=True)
+             │    └ None
+             └ <__main__.DatabaseManager object at 0x76caa1d182c0>
+
+AttributeError: 'NoneType' object has no attribute 'cursor'
