@@ -62,7 +62,7 @@ This project implements a fingerprint authentication system using an ESP32 micro
    DB_CONFIG = {
        'host': 'localhost',
        'user': 'fingerprint_user',
-       'password': 'your_secure_password',  # Update with your password
+       'password': 'your_secure_password',  
        'database': 'fingerprint_db'
    }
    ```

@@ -11,14 +11,13 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QTabWidget, QWidget, QVB
 from PyQt5.QtCore import Qt, QThread, pyqtSignal, pyqtSlot, QTimer
 from PyQt5.QtGui import QFont, QIcon, QPixmap
 
-# Serial and Database Configuration
 SERIAL_PORT = '/dev/ttyUSB0'  # Change this to your ESP32 serial port in Windows (COM1,COM2,COM3)
 BAUD_RATE = 115200
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'neverfail',
-    'database': 'finger'
+    'password': '',
+    'database': 'fingers'
 }
 
 # Command definitions
@@ -48,7 +47,7 @@ class SerialWorker(QThread):
     def connect_serial(self):
         try:
             self.ser = serial.Serial(self.port, self.baud_rate, timeout=1)
-            time.sleep(2)  # Wait for connection to stabilize
+            time.sleep(2)  
             return True
         except Exception as e:
             self.messageReceived.emit(f"Serial connection error: {e}")
@@ -112,7 +111,6 @@ class DatabaseManager:
         
     def connect(self):
         try:
-            # First check if the database exists, if not create it
             temp_db = mysql.connector.connect(
                 host=self.config['host'],
                 user=self.config['user'],
@@ -123,7 +121,6 @@ class DatabaseManager:
             temp_cursor.close()
             temp_db.close()
             
-            # Now connect to the specific database
             self.db = mysql.connector.connect(**self.config)
             self.setup_database()
             return True
@@ -153,19 +150,21 @@ class DatabaseManager:
         cursor.close()
     
     def enroll_fingerprint(self, finger_id, name):
-        try:
-            cursor = self.db.cursor()
-            now = datetime.now()
-            cursor.execute("""
-            INSERT INTO fingerprints (id, name, registration_date, last_access) 
-            VALUES (%s, %s, %s, %s)
-            """, (finger_id, name, now, now))
-            self.db.commit()
-            cursor.close()
-            return True
-        except Exception as err:
-            logger.exception("Database error during enrollment")
-            return False
+        if finger_id > 0:
+            try:
+                cursor = self.db.cursor()
+                now = datetime.now()
+                cursor.execute("""
+                INSERT INTO fingerprints (id, name, registration_date, last_access) 
+                VALUES (%s, %s, %s, %s)
+                """, (finger_id, name, now, now))
+                self.db.commit()
+                cursor.close()
+                logger.info('Finger print saved')
+                return True
+            except Exception as err:
+                logger.exception("Database error during enrollment")
+                return False
     
     def verify_fingerprint(self, finger_id, confidence):
         try:
@@ -258,27 +257,24 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Fingerprint Management System")
         self.setMinimumSize(800, 600)
         
-        # Initialize components
         self.serial_worker = None
         self.db_manager = DatabaseManager(DB_CONFIG)
         
         self.init_ui()
         self.connect_serial()
         
-        # Set up a timer to refresh the fingerprint and log tables
         self.refresh_timer = QTimer()
         self.refresh_timer.timeout.connect(self.refresh_data)
-        self.refresh_timer.start(5000)  # Refresh every 5 seconds
+        self.refresh_timer.start(5000) 
+        
+        self.pending_enrollment_name = None
     
     def init_ui(self):
-        # Create central widget and layout
         central_widget = QWidget()
         main_layout = QVBoxLayout(central_widget)
-        
-        # Create tabs
+
         self.tabs = QTabWidget()
         
-        # Create tab widgets
         self.dashboard_tab = QWidget()
         self.enrollment_tab = QWidget()
         self.verification_tab = QWidget()
@@ -286,7 +282,6 @@ class MainWindow(QMainWindow):
         self.logs_tab = QWidget()
         self.settings_tab = QWidget()
         
-        # Add tabs to tab widget
         self.tabs.addTab(self.dashboard_tab, "Dashboard")
         self.tabs.addTab(self.enrollment_tab, "Enroll")
         self.tabs.addTab(self.verification_tab, "Verify")
@@ -294,7 +289,6 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.logs_tab, "Access Logs")
         self.tabs.addTab(self.settings_tab, "Settings")
         
-        # Set up individual tabs
         self.setup_dashboard_tab()
         self.setup_enrollment_tab()
         self.setup_verification_tab()
@@ -302,20 +296,16 @@ class MainWindow(QMainWindow):
         self.setup_logs_tab()
         self.setup_settings_tab()
         
-        # Add status bar
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
         
-        # Add tabs to main layout
         main_layout.addWidget(self.tabs)
         
-        # Set central widget
         self.setCentralWidget(central_widget)
     
     def setup_dashboard_tab(self):
         layout = QVBoxLayout()
         
-        # Status group
         status_group = QGroupBox("System Status")
         status_layout = QFormLayout()
         
@@ -331,7 +321,6 @@ class MainWindow(QMainWindow):
         
         status_group.setLayout(status_layout)
         
-        # Quick actions
         actions_group = QGroupBox("Quick Actions")
         actions_layout = QVBoxLayout()
         
@@ -345,7 +334,6 @@ class MainWindow(QMainWindow):
         actions_layout.addWidget(self.count_btn)
         actions_group.setLayout(actions_layout)
         
-        # Recent activity group
         recent_group = QGroupBox("Recent Activity")
         recent_layout = QVBoxLayout()
         
@@ -356,7 +344,6 @@ class MainWindow(QMainWindow):
         recent_layout.addWidget(self.recent_logs_table)
         recent_group.setLayout(recent_layout)
         
-        # Add to main layout
         layout.addWidget(status_group)
         layout.addWidget(actions_group)
         layout.addWidget(recent_group, 1)
@@ -376,7 +363,6 @@ class MainWindow(QMainWindow):
         form_layout.addRow("Fingerprint ID:", self.enrollment_id_spin)
         form_layout.addRow("Person Name:", self.enrollment_name_edit)
         
-        # Status and instructions
         self.enrollment_status_label = QLabel("Ready to enroll")
         self.enrollment_status_label.setAlignment(Qt.AlignCenter)
         
@@ -389,11 +375,9 @@ class MainWindow(QMainWindow):
         )
         instructions_label.setAlignment(Qt.AlignCenter)
         
-        # Enroll button
         self.enroll_button = QPushButton("Start Enrollment")
         self.enroll_button.clicked.connect(self.start_enrollment)
         
-        # Add to layout
         layout.addLayout(form_layout)
         layout.addWidget(instructions_label)
         layout.addWidget(self.enrollment_status_label)
@@ -405,7 +389,6 @@ class MainWindow(QMainWindow):
     def setup_verification_tab(self):
         layout = QVBoxLayout()
         
-        # Status and instructions
         self.verification_status_label = QLabel("Ready to verify")
         self.verification_status_label.setAlignment(Qt.AlignCenter)
         self.verification_status_label.setFont(QFont("Arial", 14))
@@ -418,7 +401,6 @@ class MainWindow(QMainWindow):
         )
         instructions_label.setAlignment(Qt.AlignCenter)
         
-        # Result display
         result_group = QGroupBox("Verification Result")
         result_layout = QFormLayout()
         
@@ -433,13 +415,11 @@ class MainWindow(QMainWindow):
         result_layout.addRow("Time:", self.verify_time_label)
         
         result_group.setLayout(result_layout)
-        
-        # Verify button
+
         self.verify_button = QPushButton("Start Verification")
         self.verify_button.clicked.connect(self.start_verification)
         self.verify_button.setMinimumHeight(50)
         
-        # Add to layout
         layout.addWidget(instructions_label)
         layout.addWidget(self.verification_status_label)
         layout.addWidget(result_group)
@@ -451,13 +431,11 @@ class MainWindow(QMainWindow):
     def setup_fingerprints_tab(self):
         layout = QVBoxLayout()
         
-        # Fingerprints table
         self.fingerprints_table = QTableWidget(0, 4)
         self.fingerprints_table.setHorizontalHeaderLabels(["ID", "Name", "Registration Date", "Last Access"])
         self.fingerprints_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.fingerprints_table.setSelectionBehavior(QTableWidget.SelectRows)
         
-        # Buttons
         buttons_layout = QHBoxLayout()
         
         self.refresh_fingerprints_btn = QPushButton("Refresh")
@@ -469,7 +447,6 @@ class MainWindow(QMainWindow):
         buttons_layout.addWidget(self.refresh_fingerprints_btn)
         buttons_layout.addWidget(self.delete_fingerprint_btn)
         
-        # Add to layout
         layout.addWidget(self.fingerprints_table)
         layout.addLayout(buttons_layout)
         
@@ -478,16 +455,13 @@ class MainWindow(QMainWindow):
     def setup_logs_tab(self):
         layout = QVBoxLayout()
         
-        # Logs table
         self.logs_table = QTableWidget(0, 6)
         self.logs_table.setHorizontalHeaderLabels(["Log ID", "Fingerprint ID", "Name", "Timestamp", "Confidence", "Status"])
         self.logs_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         
-        # Refresh button
         self.refresh_logs_btn = QPushButton("Refresh Logs")
         self.refresh_logs_btn.clicked.connect(self.refresh_logs)
         
-        # Add to layout
         layout.addWidget(self.logs_table)
         layout.addWidget(self.refresh_logs_btn)
         
@@ -496,12 +470,10 @@ class MainWindow(QMainWindow):
     def setup_settings_tab(self):
         layout = QVBoxLayout()
         
-        # Serial settings
         serial_group = QGroupBox("Serial Connection")
         serial_layout = QFormLayout()
         
         self.serial_port_combo = QComboBox()
-        # Add common port names
         for i in range(10):
             if sys.platform == "win32":
                 self.serial_port_combo.addItem(f"COM{i+1}")
@@ -527,7 +499,6 @@ class MainWindow(QMainWindow):
         
         serial_group.setLayout(serial_layout)
         
-        # Database settings
         db_group = QGroupBox("Database Connection")
         db_layout = QFormLayout()
         
@@ -548,7 +519,6 @@ class MainWindow(QMainWindow):
         
         db_group.setLayout(db_layout)
         
-        # Add to layout
         layout.addWidget(serial_group)
         layout.addWidget(db_group)
         layout.addStretch(1)
@@ -556,12 +526,10 @@ class MainWindow(QMainWindow):
         self.settings_tab.setLayout(layout)
     
     def connect_serial(self):
-        # Stop any existing serial worker
         if self.serial_worker:
             self.serial_worker.stop()
             self.serial_worker.wait()
         
-        # Get port and baud rate from settings if UI is set up
         if hasattr(self, 'serial_port_combo'):
             port = self.serial_port_combo.currentText()
             baud_rate = int(self.baud_rate_combo.currentText())
@@ -569,10 +537,11 @@ class MainWindow(QMainWindow):
             port = SERIAL_PORT
             baud_rate = BAUD_RATE
         
-        # Create and start the serial worker
         self.serial_worker = SerialWorker(port, baud_rate)
         self.serial_worker.messageReceived.connect(self.handle_message)
+        
         self.serial_worker.responseReceived.connect(self.handle_response)
+        
         self.serial_worker.readyChanged.connect(self.handle_ready_changed)
         self.serial_worker.start()
         
@@ -580,7 +549,6 @@ class MainWindow(QMainWindow):
         self.serial_status_label.setText(f"Connecting to {port}...")
     
     def connect_database(self):
-        # Get settings from UI
         config = {
             'host': self.db_host_edit.text(),
             'user': self.db_user_edit.text(),
@@ -588,14 +556,11 @@ class MainWindow(QMainWindow):
             'database': self.db_name_edit.text()
         }
         
-        # Close existing connection
         if self.db_manager:
             self.db_manager.close()
         
-        # Create new database manager
         self.db_manager = DatabaseManager(config)
         
-        # Try to connect
         if self.db_manager.connect():
             self.database_status_label.setText("Connected")
             self.status_bar.showMessage("Connected to database", 3000)
@@ -626,7 +591,6 @@ class MainWindow(QMainWindow):
         logs = self.db_manager.get_recent_logs()
         self.logs_table.setRowCount(len(logs))
         
-        # Update main logs tab
         for i, log in enumerate(logs):
             self.logs_table.setItem(i, 0, QTableWidgetItem(str(log['log_id'])))
             self.logs_table.setItem(i, 1, QTableWidgetItem(str(log['fingerprint_id'])))
@@ -634,8 +598,7 @@ class MainWindow(QMainWindow):
             self.logs_table.setItem(i, 3, QTableWidgetItem(str(log['timestamp'])))
             self.logs_table.setItem(i, 4, QTableWidgetItem(str(log['confidence'])))
             self.logs_table.setItem(i, 5, QTableWidgetItem(log['status']))
-        
-        # Update recent logs on dashboard (show only 5 most recent)
+    
         recent_logs = logs[:5]
         self.recent_logs_table.setRowCount(len(recent_logs))
         
@@ -658,33 +621,104 @@ class MainWindow(QMainWindow):
         else:
             self.database_status_label.setText("Connected")
             
-        # Template count will be updated when the user presses the Count button
     
     def handle_message(self, message):
         """Handle messages from the serial worker"""
         self.status_bar.showMessage(message, 3000)
-        logger.info(message)
     
     def handle_response(self, response):
         """Handle responses from the fingerprint sensor"""
-        if response['type'] == CMD_SUCCESS:
-            if 'enrollment' in response['message'].lower():
-                self.handle_enrollment_response(response)
-            elif 'template' in response['message'].lower():
-                self.template_count_label.setText(str(response['id']))
-            elif 'verified' in response['message'].lower():
-                self.handle_verification_response(response)
-            elif 'deleted' in response['message'].lower():
-                self.handle_deletion_response(response)
-        elif response['type'] == CMD_FAILURE:
-            self.status_bar.showMessage(f"Error: {response['message']}", 5000)
+        logger.info(f"Sensor Response: {response} {response['type']}")  
+
+    
+        logger.info("Handling successful enrollment response")
+        self.handle_enrollment_response(response)
+        
+        logger.info('here')
+        """Handle successful enrollment response and save to MySQL DB"""
+        
+        
+        finger_id = response['id']
+        
+        logger.info(finger_id)
+        
+        if not finger_id == 0:
+            name = self.pending_enrollment_name  or "jonh"
+
+            if not name:
+                logger.warning("No name was stored during enrollment")
+                self.enrollment_status_label.setText("Enrollment failed: Name missing")
+                return
+
+            logger.info(f"Attempting to store fingerprint: ID={finger_id}, Name={name}")
+
+            if self.db_manager.enroll_fingerprint(finger_id, name):
+                success_msg = f"Fingerprint stored in MySQL: ID={finger_id}, Name={name}"
+                logger.success(success_msg)  
+                self.enrollment_status_label.setText(success_msg)  
+                self.status_bar.showMessage(success_msg, 5000)  
+                QMessageBox.information(self, "Success", success_msg)  
+                self.refresh_fingerprints()
+            else:
+                error_msg = "Database error during enrollment"
+                logger.error(error_msg)
+                self.enrollment_status_label.setText(error_msg)
+                self.status_bar.showMessage(error_msg, 5000)
+
+            self.pending_enrollment_name = None 
+                
+        if 'template' in response['message'].lower():
+            self.template_count_label.setText(str(response['id']))
+        elif 'Y' == response['type']:
+            logger.info("Handling successful verification response")
+            self.handle_verification_response(response)
             
+            if 'Y' == response['type']:
+                logger.info("Handling successful enrollment response")
+                self.handle_enrollment_response(response)
+                
+                logger.info('here')
+                """Handle successful enrollment response and save to MySQL DB"""
+                finger_id = response['id']
+                name = "name"
+
+                if not name:
+                    logger.warning("No name was stored during enrollment")
+                    self.enrollment_status_label.setText("Enrollment failed: Name missing")
+                    return
+
+                logger.info(f"Attempting to store fingerprint: ID={finger_id}, Name={name}")
+
+                if self.db_manager.enroll_fingerprint(finger_id, name):
+                    success_msg = f"Fingerprint stored in MySQL: ID={finger_id}, Name={name}"
+                    logger.success(success_msg)  
+                    self.enrollment_status_label.setText(success_msg)  
+                    self.status_bar.showMessage(success_msg, 5000)  
+                    QMessageBox.information(self, "Success", success_msg)  
+                    self.refresh_fingerprints()
+                else:
+                    error_msg = "Database error during enrollment"
+                    logger.error(error_msg)
+                    self.enrollment_status_label.setText(error_msg)
+                    self.status_bar.showMessage(error_msg, 5000)
+
+                self.pending_enrollment_name = None 
+            
+        elif 'deleted' in response['message'].lower():
+            logger.info("Handling successful deletion response")
+            self.handle_deletion_response(response)
+        elif response['type'] == CMD_FAILURE:
+            error_msg = f"Sensor Error: {response['message']}"
+            logger.error(error_msg)
+            self.status_bar.showMessage(error_msg, 5000)
+
             if 'verify' in response['message'].lower():
                 self.verification_status_label.setText("Verification Failed")
                 self.verification_status_label.setStyleSheet("color: red")
                 self.db_manager.log_access_denied()
                 self.refresh_logs()
-    
+
+        
     def handle_ready_changed(self, ready):
         """Handle sensor ready state changes"""
         if ready:
@@ -693,35 +727,51 @@ class MainWindow(QMainWindow):
             self.sensor_status_label.setText("Busy")
     
     def start_enrollment(self):
-        """Start the enrollment process"""
         if not self.serial_worker or not self.serial_worker.isRunning():
             QMessageBox.warning(self, "Not Connected", "Serial connection not established")
             return
-            
+
         finger_id = self.enrollment_id_spin.value()
-        name = self.enrollment_name_edit.text()
-        
+        name = self.enrollment_name_edit.text().strip()
+
         if not name:
             QMessageBox.warning(self, "Invalid Input", "Please enter a name")
             return
-            
+
+        self.pending_enrollment_name = name 
         self.enrollment_status_label.setText("Place finger on sensor...")
         self.serial_worker.send_command(CMD_ENROLL, finger_id)
+
     
     def handle_enrollment_response(self, response):
-        """Handle enrollment response"""
-        if response['type'] == CMD_SUCCESS:
-            finger_id = response['id']
-            name = self.enrollment_name_edit.text()
-            
-            if self.db_manager.enroll_fingerprint(finger_id, name):
-                self.enrollment_status_label.setText(f"Enrollment successful! ID: {finger_id}")
-                self.refresh_fingerprints()
-                QMessageBox.information(self, "Success", f"Enrollment successful! ID: {finger_id}")
-            else:
-                self.enrollment_status_label.setText("Database error during enrollment")
+        logger.info('here')
+        """Handle successful enrollment response and save to MySQL DB"""
+        finger_id = response['id']
+        name = self.pending_enrollment_name 
+
+        if not name:
+            logger.warning("No name was stored during enrollment")
+            self.enrollment_status_label.setText("Enrollment failed: Name missing")
+            return
+
+        logger.info(f"Attempting to store fingerprint: ID={finger_id}, Name={name}")
+
+        if self.db_manager.enroll_fingerprint(finger_id, name):
+            success_msg = f"Fingerprint stored in MySQL: ID={finger_id}, Name={name}"
+            logger.success(success_msg)  
+            self.enrollment_status_label.setText(success_msg)  
+            self.status_bar.showMessage(success_msg, 5000)  
+            QMessageBox.information(self, "Success", success_msg)  
+            self.refresh_fingerprints()
         else:
-            self.enrollment_status_label.setText("Enrollment failed")
+            error_msg = "Database error during enrollment"
+            logger.error(error_msg)
+            self.enrollment_status_label.setText(error_msg)
+            self.status_bar.showMessage(error_msg, 5000)
+
+        self.pending_enrollment_name = None  
+
+
     
     def start_verification(self):
         """Start the verification process"""
@@ -735,7 +785,7 @@ class MainWindow(QMainWindow):
     
     def quick_verify(self):
         """Quick verification from dashboard"""
-        self.tabs.setCurrentIndex(2)  # Switch to verification tab
+        self.tabs.setCurrentIndex(2) 
         self.start_verification()
     
     def handle_verification_response(self, response):
@@ -830,7 +880,6 @@ class MainWindow(QMainWindow):
 def main():
     logger.add("fingerprint_system.log", rotation="10 MB", level="INFO")
     
-    # Create and show the application
     app = QApplication(sys.argv)
     app.setStyle('Fusion')  
     

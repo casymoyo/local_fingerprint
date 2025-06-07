@@ -3,7 +3,6 @@
 HardwareSerial MySerial(2);  // UART2 on ESP32
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&MySerial);
 
-// Command protocol constants
 #define CMD_ENROLL 'E'        // Enroll a new fingerprint
 #define CMD_VERIFY 'V'        // Verify a fingerprint
 #define CMD_DELETE 'D'        // Delete a fingerprint
@@ -12,8 +11,9 @@ Adafruit_Fingerprint finger = Adafruit_Fingerprint(&MySerial);
 #define CMD_SUCCESS 'S'       // Success message
 #define CMD_FAILURE 'F'       // Failure message
 #define CMD_READY 'Y'         // Ready for next command
+#define CMD_DELETE_ALL 'X'    // Delete all fingerprints
 
-// Function declarations
+
 void displayMenu();
 void enrollFinger(int id);
 int getFingerprintID();
@@ -22,9 +22,9 @@ void sendSerialResponse(char responseType, int id, int confidence, String messag
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial) delay(10);  // Wait for serial port to connect
+  while (!Serial) delay(10); 
   
-  MySerial.begin(57600, SERIAL_8N1, 16, 17);  // typical baud rate for fingerprint modules
+  MySerial.begin(57600, SERIAL_8N1, 16, 17);  
   delay(100);
   
   finger.begin(57600);
@@ -43,11 +43,9 @@ void loop() {
   if (Serial.available()) {
     char command = Serial.read();
     int id = -1;
-    int result = -1;  // Declare result variable outside switch to avoid errors
+    int result = -1;  
     
-    // Wait for ID parameter if needed
     if (command == CMD_ENROLL || command == CMD_DELETE) {
-      // Wait for ID to be sent
       delay(100);
       if (Serial.available()) {
         id = Serial.parseInt();
@@ -85,13 +83,19 @@ void loop() {
         finger.getTemplateCount();
         sendSerialResponse(CMD_RESPONSE, finger.templateCount, 0, "Template count");
         break;
+      
+      case CMD_DELETE_ALL:
+        if (finger.emptyDatabase() == FINGERPRINT_OK) {
+          sendSerialResponse(CMD_SUCCESS, 0, 0, "All fingerprints deleted");
+        } else {
+          sendSerialResponse(CMD_FAILURE, 0, 0, "Failed to delete all fingerprints");
+        }
         
       default:
         sendSerialResponse(CMD_FAILURE, 0, 0, "Unknown command");
         break;
     }
-    
-    // Clear any remaining characters in the buffer
+
     while(Serial.available()) Serial.read();
     
     sendSerialResponse(CMD_READY, 0, 0, "Ready for next command");
@@ -224,7 +228,6 @@ void deleteFingerprint(int id) {
 }
 
 void sendSerialResponse(char responseType, int id, int confidence, String message) {
-  // Format: R,type,id,confidence,message
   Serial.print(CMD_RESPONSE);
   Serial.print(",");
   Serial.print(responseType);
